@@ -1,0 +1,16 @@
+[package]
+name = "criterion-bug"
+version = "0.1.0"
+edition = "2024"
+
+[dev-dependencies]
+criterion = { version = "0.7.0", path = "../criterion.rs", features=['real_blackbox']  }
+criterion-macro = "0.4.0"
+
+[[bench]]
+name = "test_criterion"
+harness = false
+
+[profile.benchmark]
+inherits = "release"
+debug = true
